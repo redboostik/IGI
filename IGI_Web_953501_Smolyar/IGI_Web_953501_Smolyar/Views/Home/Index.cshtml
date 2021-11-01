@@ -1,0 +1,92 @@
+﻿
+@{
+    ViewData["Title"] = "Главная страница";
+    
+}
+
+<main class="container">
+    <div class="fa-3x" id="lab">
+        @ViewData["Text"]
+    </div>
+    <div class="fa-2x" id="ordered-list">
+        Список
+    </div>
+    <ol type="A">
+        @for(var i = 1; i < 5; i++)
+        {
+        <li>элемент @i списка</li>
+        }
+    </ol>
+    <hr />
+    <div class="fa-2x" id="form">
+        Форма
+        <select asp-items="@ViewData["Lst"] as SelectList"></select>
+    </div>
+    <form method="post">
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label"></label>
+            <div class="col-sm-10 pt-0">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="checkbox1" id="checkbox1" />
+                    <label class="form-check-label" for="checkbox1">
+                        Чек-бокс 1
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="checkbox2" id="checkbox2" />
+                    <label class="form-check-label" for="checkbox2">
+                        Чек-бокс 2
+                    </label>
+                </div>
+            </div>
+        </div>
+        <fieldset class="form-group row">
+            <label class="col-sm-2 col-form-label"></label>
+            <div class="col-sm-2">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="radio" id="radio1" value="option1" />
+                    <label class="form-check-label" for="radio1">
+                        Радио 1
+                    </label>
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="radio" id="radio2" value="option2" />
+                    <label class="form-check-label" for="radio2">
+                        Радио 2
+                    </label>
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="radio" id="radio3" value="option3" />
+                    <label class="form-check-label" for="radio3">
+                        Радио 3
+                    </label>
+                </div>
+            </div>
+        </fieldset>
+
+        <div class="form-group row">
+
+            <label class="col-sm-2 col-form-label" for="login">Логин: </label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="login" id="login" placeholder="Введите имя" />
+            </div>
+        </div>
+        <div class="form-group row">
+
+            <label class="col-sm-2 col-form-label" for="password">Пароль: </label>
+            <div class="col-sm-10">
+                <input type="password" class="form-control" name="password" id="password" placeholder="Введите пароль" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-2">
+                <button type="submit" class="btn btn-primary">Отправить</button>
+            </div>
+        </div>
+
+    </form>
+
