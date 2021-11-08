@@ -21,11 +21,11 @@ namespace IGI_Web_953501_Smolyar.Middleware
         public async Task Invoke(HttpContext context)
         {
             await _next.Invoke(context);
-           // if (context.Response.StatusCode != StatusCodes.Status200OK)
-           // {
+            if (context.Response.StatusCode != StatusCodes.Status200OK)
+            {
                 string path = context.Request.Path + context.Request.QueryString;
                 _logger.LogInformation($"Request {path} returns status code { context.Response.StatusCode }");
-           // }
+            }
         }
     }
 }

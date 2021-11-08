@@ -10,7 +10,6 @@ namespace IGI_Web_953501_Smolyar.Models
         public int TotalPages { get; set; }
         public int CurrentPage { get; set; }
         private ListViewModel(IEnumerable<T> items,
-
         int total,
         int current) : base(items)
 

@@ -1,0 +1,3 @@
+2021-11-09T00:32:44.9839138+03:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2021-11-09T00:32:44.9989717+03:00  [INF] Hosting environment: "Development" (c3307c92)
+2021-11-09T00:32:44.9990524+03:00  [INF] Content root path: "D:\GitHub\IGI\IGI_Web_953501_Smolyar\IGI_Web_953501_Smolyar" (b5d60022)

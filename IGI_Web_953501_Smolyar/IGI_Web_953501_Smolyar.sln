@@ -3,7 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31729.503
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IGI_Web_953501_Smolyar", "IGI_Web_953501_Smolyar\IGI_Web_953501_Smolyar.csproj", "{67BD5F79-B2C0-4A23-8B83-9E8E17A8DC10}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IGI_Web_953501_Smolyar", "IGI_Web_953501_Smolyar\IGI_Web_953501_Smolyar.csproj", "{67BD5F79-B2C0-4A23-8B83-9E8E17A8DC10}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IGI_WEB_953501_Smolyar.Blazor.Server", "IGI_WEB_953501_Smolyar.Blazor\Server\IGI_WEB_953501_Smolyar.Blazor.Server.csproj", "{D3F6D43F-202F-4294-9A36-8EE71993BF8F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IGI_WEB_953501_Smolyar.Blazor.Client", "IGI_WEB_953501_Smolyar.Blazor\Client\IGI_WEB_953501_Smolyar.Blazor.Client.csproj", "{059D4A94-7E93-4578-9793-E053328B1340}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IGI_WEB_953501_Smolyar.Blazor.Shared", "IGI_WEB_953501_Smolyar.Blazor\Shared\IGI_WEB_953501_Smolyar.Blazor.Shared.csproj", "{02AF270F-F18E-433B-8EB6-228F41D45C4F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +21,18 @@ Global
 		{67BD5F79-B2C0-4A23-8B83-9E8E17A8DC10}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{67BD5F79-B2C0-4A23-8B83-9E8E17A8DC10}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{67BD5F79-B2C0-4A23-8B83-9E8E17A8DC10}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D3F6D43F-202F-4294-9A36-8EE71993BF8F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3F6D43F-202F-4294-9A36-8EE71993BF8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3F6D43F-202F-4294-9A36-8EE71993BF8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3F6D43F-202F-4294-9A36-8EE71993BF8F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{059D4A94-7E93-4578-9793-E053328B1340}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{059D4A94-7E93-4578-9793-E053328B1340}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{059D4A94-7E93-4578-9793-E053328B1340}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{059D4A94-7E93-4578-9793-E053328B1340}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02AF270F-F18E-433B-8EB6-228F41D45C4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02AF270F-F18E-433B-8EB6-228F41D45C4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02AF270F-F18E-433B-8EB6-228F41D45C4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02AF270F-F18E-433B-8EB6-228F41D45C4F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

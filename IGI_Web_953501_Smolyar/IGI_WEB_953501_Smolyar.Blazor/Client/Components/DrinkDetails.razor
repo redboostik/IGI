@@ -1,0 +1,23 @@
+﻿@if (Drink != null)
+{
+    <img src="@imageSrc" class="img-thumbnail" width="150" />
+    <div>
+        <p>@Drink.Name - @Drink.Description</p>
+        <div class="badge badge-info ">
+            @Drink.Cost $
+    </div>
+</div>
+}
+@code {
+    [Parameter]
+    public DetailsViewModel Drink { get; set; }
+    [Parameter]
+    public EventCallback<DetailsViewModel> DrinkChanged { get; set; }
+    string imageSrc
+    {
+        get
+        {
+            return $"images/{Drink.Image}";
+        }
+    }
+}
