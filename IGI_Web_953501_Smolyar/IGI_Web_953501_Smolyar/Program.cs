@@ -21,6 +21,11 @@ namespace IGI_Web_953501_Smolyar
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
+                }).ConfigureLogging(lp =>
+                {
+                    lp.ClearProviders();
+                    lp.AddFilter("Microsoft", LogLevel.None);
+
                 });
     }
 }

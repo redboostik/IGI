@@ -14,7 +14,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using IGI_Web_953501_Smolyar.Entities;
 using IGI_Web_953501_Smolyar.Data;
-
+using Microsoft.AspNetCore.Http;
+using IGI_Web_953501_Smolyar.Services;
+using IGI_Web_953501_Smolyar.Models;
+using Microsoft.Extensions.Logging;
+using IGI_Web_953501_Smolyar.Extensions;
 
 namespace IGI_Web_953501_Smolyar
 {
@@ -39,7 +43,12 @@ namespace IGI_Web_953501_Smolyar
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
             services.AddDatabaseDeveloperPageExceptionFilter();
-
+            services.AddDistributedMemoryCache();
+            services.AddSession(opt =>
+            {
+                opt.Cookie.HttpOnly = true;
+                opt.Cookie.IsEssential = true;
+            });
             services.AddIdentity<ApplicationUser, IdentityRole>(options =>
             {
                 options.SignIn.RequireConfirmedAccount = false;
@@ -51,14 +60,17 @@ namespace IGI_Web_953501_Smolyar
             .AddEntityFrameworkStores<ApplicationDbContext>()
             .AddDefaultTokenProviders();
             services.AddAuthorization();
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddScoped<Cart>(sp => CartService.GetCart(sp));
             services.AddControllersWithViews();
             services.AddRazorPages();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ApplicationDbContext context,
-                                UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> roleManager)
+                                UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> roleManager, ILoggerFactory logger)
         {
+            logger.AddFile("Logs/log-{Date}.txt");
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -76,6 +88,8 @@ namespace IGI_Web_953501_Smolyar
             app.UseRouting();
 
             app.UseAuthentication();
+            app.UseSession();
+            app.UseFileLogging();
             app.UseAuthorization();
             DbInitializer.Seed(context, userManager, roleManager).Wait();
             app.UseEndpoints(endpoints =>
